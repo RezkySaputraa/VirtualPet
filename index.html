@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Pet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://i.pinimg.com/originals/71/84/32/718432c11b8bbcaaaf3fe5b01b8f30c3.png"
+      type="image/x-icon"
+    />
+  </head>
+  <style>
+    .gambar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .foto {
+      border-radius: 20px;
+      min-width: 300px;
+      max-width: 300px;
+      max-height: 168px;
+    }
+
+    .button {
+      text-align: center;
+      background-color: rgb(250, 208, 214);
+      border-radius: 20px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .gapBut {
+      margin: 15px;
+      border-radius: 25px;
+      padding: 10px;
+      background-color: rgb(252, 242, 101);
+    }
+
+    .gapBut:hover {
+      transition: ease-in-out 0.4s;
+      background-color: rgb(255, 239, 16);
+      cursor: pointer;
+    }
+
+    .start:hover {
+      transition: ease-in-out 0.4s;
+      background-color: rgb(255, 239, 16);
+      cursor: pointer;
+    }
+
+    .start {
+      margin: 0 auto;
+      border-radius: 15px;
+      padding: 15px;
+      background-color: rgb(252, 242, 101);
+    }
+
+    .butBaru {
+      padding: 8px;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .outside {
+      background-color: beige;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .text {
+      text-align: center;
+    }
+
+    .paragraf {
+      text-align: center;
+    }
+
+    .asli {
+      display: none;
+    }
+
+    .background {
+      background-color: blanchedalmond;
+      padding: 13px;
+      padding-top: 25px;
+      border-radius: 18px;
+      box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("https://wallpapercave.com/wp/wp3866798.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .lato-regular {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+    @media screen and (max-width:600px) {
+        
+    }
+  </style>
+  <body>
+    <div class="outside">
+      <div class="background">
+        <div class="gambar">
+          <img
+            src="https://i2.wp.com/www.central.co.th/e-shopping/wp-content/uploads/2017/01/001pompompurin.png?resize=642%2C447"
+            class="foto"
+            alt=""
+          />
+        </div>
+        <h2 class="text lato-regular">Halo Semuaa, Nama Aku PomPom</h2>
+        <p class="paragraf lato-regular"></p>
+      </div>
+      <div class="button">
+        <button class="gapBut start mulai" id="get">
+          <span class="lato-regular">Lets Get Started</span>
+        </button>
+        <div class="asli">
+          <button class="gapBut makan">
+            <span class="lato-regular">Makan</span>
+          </button>
+          <button class="gapBut tidur">
+            <span class="lato-regular">Tidur</span>
+          </button>
+          <button class="gapBut mandi">
+            <span class="lato-regular">Mandi</span>
+          </button>
+          <button class="gapBut olahraga">
+            <span class="lato-regular">Beraktivitas</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let count = 0;
+      let countBalik = 0;
+
+      const start = document.querySelector(".start");
+      start.addEventListener("click", () => {
+        const gambar = document.querySelector(".foto");
+        gambar.src =
+          "https://i.pinimg.com/736x/92/80/82/9280823d3b3f95849b6ae232f62f479c--sanrio-pom-pom.jpg";
+
+        const text = document.querySelector(".text");
+        text.innerHTML = "<h4>PomPom Yoga Pagi</h4>";
+
+        const hilang = document.querySelector(".asli");
+        hilang.classList.remove("asli");
+
+        const add = document.querySelector("#get");
+        add.classList.add("asli");
+
+        const para = document.querySelector(".paragraf");
+        para.innerHTML =
+          "PomPom Lapar Setelah Yoga, PomPom Mau <b>Makan</b> 😍";
+      });
+
+      const makan = document.querySelector(".makan");
+      makan.addEventListener("click", () => {
+        if (count == 0) {
+          const gambar = document.querySelector(".foto");
+          gambar.src =
+            "https://i.pinimg.com/originals/52/43/56/5243568bf7ae2601f2cdae029b66e6f4.jpg";
+          const text = document.querySelector(".text");
+          text.innerHTML = "<h4>PomPom Makan Cookies</h4>";
+
+          const para = document.querySelector(".paragraf");
+          para.innerHTML =
+            "Karena Kenyang, PomPom Jadi Ngantuk Mau <b>Tidur</b> 🥱";
+          count = 1;
+        } else if (count == 0 && countBalik == 1) {
+          const gambar = document.querySelector(".foto");
+          gambar.src =
+            "https://i.pinimg.com/736x/10/fb/4f/10fb4f16987fdf27ed2cb886dd7e7f05.jpg";
+          const text = document.querySelector(".text");
+          text.innerHTML = "<h4>PomPom Mandi</h4>";
+          const para = document.querySelector(".paragraf");
+          para.innerHTML =
+            "PomPom Udah Makan, Tidur, Mandi, Siap <b>Beraktivitas</b> !!";
+          count = 3;
+        }
+      });
+
+      const tidur = document.querySelector(".tidur");
+      tidur.addEventListener("click", () => {
+        if (count == 0) {
+          const gambar = document.querySelector(".foto");
+          gambar.src =
+            "https://i.pinimg.com/736x/be/44/ac/be44acac9247b30214b5105e0c845e1c.jpg";
+          const text = document.querySelector(".text");
+          text.innerHTML = "<h4>PomPom Sedih Kegiatan PomPom Di Skip 😭</h4>";
+          const para = document.querySelector(".paragraf");
+          para.innerHTML = "Kemauan PomPom Mesti <b>Diturutin!!!</b>";
+        } else if (count == 1) {
+          const gambar = document.querySelector(".foto");
+          gambar.src =
+            "https://i.pinimg.com/originals/87/b0/49/87b049fdc6de16a4f4f2084485141bb7.jpg";
+          const text = document.querySelector(".text");
+          text.innerHTML = "<h4>PomPom Tidur Sama Kucing</h4>";
+          const para = document.querySelector(".paragraf");
+          para.innerHTML =
+            "Sehabis Bangun Tidur PomPom Mau <b>Mandi</b>, Karna Bau 😁";
+          count = 2;
+        }
+      });
+
+      const mandi = document.querySelector(".mandi");
+      mandi.addEventListener("click", () => {
+        if (count == 0 || count == 1) {
+          const gambar = document.querySelector(".foto");
+          gambar.src =
+            "https://i.pinimg.com/736x/be/44/ac/be44acac9247b30214b5105e0c845e1c.jpg";
+          const text = document.querySelector(".text");
+          text.innerHTML = "<h4>PomPom Sedih Kegiatan PomPom Di Skip 😭</h4>";
+          const para = document.querySelector(".paragraf");
+          para.innerHTML = "Kemauan PomPom Mesti <b>Diturutin!!!</b>";
+          count = 0;
+        } else if (count == 2) {
+          const gambar = document.querySelector(".foto");
+          gambar.src =
+            "https://i.pinimg.com/736x/10/fb/4f/10fb4f16987fdf27ed2cb886dd7e7f05.jpg";
+          const text = document.querySelector(".text");
+          text.innerHTML = "<h4>PomPom Mandi Di Bak</h4>";
+          const para = document.querySelector(".paragraf");
+          para.innerHTML =
+            "PomPom Udah Makan, Tidur, Mandi, Siap <b>Beraktivitas !!!</b> Lagi";
+          count = 3;
+          countBalik = 1;
+        }
+      });
+
+      const olahraga = document.querySelector(".olahraga");
+      olahraga.addEventListener("click", () => {
+        if (count == 3) {
+          const gambar = document.querySelector(".foto");
+          gambar.src =
+            "https://th.bing.com/th/id/OIP.Xakh-72fl1aWo-jLHn2i_QAAAA?rs=1&pid=ImgDetMain";
+          const text = document.querySelector(".text");
+          text.innerHTML = "<h4>PomPom Beraktivitas Dengan Semangat</h4>";
+          const para = document.querySelector(".paragraf");
+          para.textContent = "";
+
+          const button = document.querySelector(".button");
+          button.textContent = "";
+          const newBut = document.createElement("button");
+          newBut.className = "gapBut butBaru";
+          newBut.innerHTML =
+            "<h4>Ulangi Kegiatan PomPom dengan Refresh Page</h4>";
+          button.appendChild(newBut);
+        } else {
+          const gambar = document.querySelector(".foto");
+          gambar.src =
+            "https://th.bing.com/th/id/OIP.CTDC2xZdAQNRU75BtSYAzQAAAA?rs=1&pid=ImgDetMain";
+          const text = document.querySelector(".text");
+          text.innerHTML = "<h4>PomPom Malas Kalo Ga Berurutan</h4>";
+          const para = document.querySelector(".paragraf");
+          para.textContent = "";
+
+          const button = document.querySelector(".button");
+          button.textContent = "";
+          const newBut = document.createElement("button");
+          newBut.className = "gapBut butBaru";
+          newBut.innerHTML =
+            "<h4>Ulangi Kegiatan PomPom dengan Refresh Page</h4>";
+          button.appendChild(newBut);
+        }
+      });
+    </script>
+  </body>
+</html>
